@@ -56,7 +56,7 @@ items:
             disks:
             - disk:
                 bus: virtio
-              name: surly-rootdisk
+              name: surly-piranha-disk
             - disk:
                 bus: virtio
               name: cloudinitdisk
@@ -83,7 +83,7 @@ items:
         volumes:
         - persistentVolumeClaim:
             claimName: rhel9-surly-piranha
-          name: surly-rootdisk
+          name: surly-piranha-disk
         - cloudInitNoCloud:
             userData: |-
               #cloud-config
