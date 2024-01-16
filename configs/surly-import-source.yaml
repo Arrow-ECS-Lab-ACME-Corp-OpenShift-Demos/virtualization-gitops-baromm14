@@ -3,6 +3,13 @@ kind: VolumeImportSource
 metadata:
   name: surly-import-source
 spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    volumeMode: Filesystem
   source:
     registry:
       url: "docker://registry.redhat.io/rhel9/rhel-guest-image:9.3-748"
