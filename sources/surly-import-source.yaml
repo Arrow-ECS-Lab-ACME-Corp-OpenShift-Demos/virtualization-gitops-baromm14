@@ -6,4 +6,4 @@ spec:
   source:
     registry:
       url: "docker://registry.redhat.io/rhel9/rhel-guest-image:latest"
-      pullMethod: node
+      pullMethod: pod
