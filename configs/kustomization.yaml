@@ -1,3 +1,3 @@
 resources:
-- surly-import-source
-- surly-piranha-disk
+- surly-import-source.yaml
+- surly-piranha-disk.yaml
