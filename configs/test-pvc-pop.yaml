@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  my-pvc
+spec:
+  dataSourceRef:
+    apiGroup: cdi.kubevirt.io
+    kind: VolumeImportSource
+    name: my-import-source
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
