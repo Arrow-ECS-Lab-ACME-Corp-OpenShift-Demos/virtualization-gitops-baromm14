@@ -1,3 +1,3 @@
 resources:
-- ../configs
-- ../sources
+#- ../configs
+#- ../sources
