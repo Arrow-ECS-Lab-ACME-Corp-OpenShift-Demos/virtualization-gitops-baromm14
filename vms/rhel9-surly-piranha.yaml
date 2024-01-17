@@ -40,9 +40,15 @@ items:
             threads: 1
           devices:
             disks:
-            - disk:
-                bus: virtio
-              name: surly-piranha-disk
+            - dataSourceRef:
+                apiGroup: cdi.kubevirt.io
+                kind: VolumeImportSource
+                name: surly-import-source
+                accessModes:
+                  - ReadWriteOnce
+                resources:
+                  requests:
+                  storage: 30Gi
             - disk:
                 bus: virtio
               name: cloudinitdisk
