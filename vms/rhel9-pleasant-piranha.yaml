@@ -21,7 +21,7 @@ items:
       vm.kubevirt.io/template.revision: "1"
       vm.kubevirt.io/template.version: v0.26.0
     name: rhel9-surly-piranha
-  spec:
+  spec:    
     running: true
     template:
       metadata:
@@ -40,15 +40,9 @@ items:
             threads: 1
           devices:
             disks:
-            - dataSourceRef:
-                apiGroup: cdi.kubevirt.io
-                kind: VolumeImportSource
-                name: surly-import-source
-                accessModes:
-                  - ReadWriteOnce
-                resources:
-                  requests:
-                  storage: 30Gi
+            - disk:
+                bus: virtio
+              name: surly-rootdisk
             - disk:
                 bus: virtio
               name: cloudinitdisk
@@ -74,8 +68,8 @@ items:
         terminationGracePeriodSeconds: 180
         volumes:
         - persistentVolumeClaim:
-            claimName: rhel9-surly-piranha
-          name: surly-piranha-disk
+            claimName: surly-piranha-disk
+          name: surly-rootdisk
         - cloudInitNoCloud:
             userData: |-
               #cloud-config
