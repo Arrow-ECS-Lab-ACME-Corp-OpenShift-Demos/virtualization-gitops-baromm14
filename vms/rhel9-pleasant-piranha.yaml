@@ -22,7 +22,7 @@ items:
       vm.kubevirt.io/template.version: v0.26.0
     name: rhel9-pleasant-piranha
   spec:    
-    running: true
+    running: false
     template:
       metadata:
         annotations:
