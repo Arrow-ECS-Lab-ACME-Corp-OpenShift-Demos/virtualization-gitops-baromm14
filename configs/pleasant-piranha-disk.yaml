@@ -9,7 +9,7 @@ spec:
     kind: VolumeImportSource
     name: pleasant-import-source
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 30Gi
